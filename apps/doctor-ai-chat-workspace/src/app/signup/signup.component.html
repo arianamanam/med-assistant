@@ -1,0 +1,103 @@
+<div
+  class="ax-min-h-screen ax-flex ax-items-center ax-justify-center ax-bg-gray-900 ax-text-white ax-px-4"
+>
+  <div
+    class="ax-max-w-5xl ax-rounded-[6%] ax-w-full ax-grid md:ax-grid-cols-2 ax-gap-8 ax-bg-gray-800 ax-shadow-lg ax-overflow-hidden"
+  >
+    <!-- Left Image -->
+    <div
+      class="ax-hidden md:ax-flex ax-items-center ax-justify-center ax-bg-gray-900 ax-pr-24"
+    >
+      <img
+        src="assets/Image/virtualDoctor.png"
+        alt="Doctor Illustration"
+        class="ax-max-w-full ax-h-auto"
+      />
+    </div>
+
+    <!-- Right Form -->
+    <div class="ax-p-8">
+      <h2 class="ax-text-3xl ax-font-bold ax-mb-2 ax-text-center">Sign up</h2>
+      <p class="ax-text-sm ax-text-gray-400 ax-text-center ax-mb-9">
+        Join MediDoc for personalized medical assistance.
+      </p>
+
+      <form class="ax-space-y-4">
+        <div>
+          <ax-label class="ax-block ax-text-white ax-text-sm ax-mb-1"
+            >Full name</ax-label
+          >
+          <input
+            type="text"
+            placeholder="Your full name"
+            class="ax-w-full ax-px-4 ax-py-2 ax-rounded-2xl ax-bg-gray-700 ax-text-white ax-focus:outline-none ax-focus:ring-2 ax-focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <ax-label class="ax-block ax-text-white ax-text-sm ax-mb-1"
+            >Email</ax-label
+          >
+          <input
+            type="email"
+            placeholder="Your email address"
+            class="ax-w-full ax-px-4 ax-py-2 ax-rounded-2xl ax-bg-gray-700 ax-text-white ax-focus:outline-none ax-focus:ring-2 ax-focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <ax-label class="ax-block ax-text-white ax-text-sm ax-mb-1"
+            >Username</ax-label
+          >
+          <input
+            type="text"
+            placeholder="Choose a username"
+            class="ax-w-full ax-px-4 ax-py-2 ax-rounded-2xl ax-bg-gray-700 ax-text-white ax-focus:outline-none ax-focus:ring-2 ax-focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <ax-label class="ax-block ax-text-white ax-text-sm ax-mb-1"
+            >Set up your password</ax-label
+          >
+          <input
+            type="password"
+            placeholder="••••••••••"
+            class="ax-w-full ax-px-4 ax-py-2 ax-rounded-2xl ax-bg-gray-700 ax-text-white ax-focus:outline-none ax-focus:ring-2 ax-focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <ax-label class="ax-block ax-text-white ax-text-sm ax-mb-1"
+            >Confirm your password</ax-label
+          >
+          <input
+            type="password"
+            placeholder="••••••••••"
+            class="ax-w-full ax-px-4 ax-py-2 ax-rounded-2xl ax-bg-gray-700 ax-text-white ax-focus:outline-none ax-focus:ring-2 ax-focus:ring-blue-500"
+          />
+        </div>
+
+        <div class="ax-flex ax-items-center">
+          <input type="checkbox" id="terms" class="ax-mr-2" />
+          <label for="terms" class="ax-text-sm ax-text-gray-400">
+            By signing up, you agree to our
+            <a href="#" class="ax-text-blue-400 ax-underline">Terms</a> and
+            <a href="#" class="ax-text-blue-400 ax-underline">Privacy Policy</a
+            >.
+          </label>
+        </div>
+
+        <ax-button
+          class="ax-flex-1 !ax-rounded-2xl"
+          [type]="'submit'"
+          text="Join"
+          color="primary"
+          [size]="'md'"
+          (click)="onClick()"
+        ></ax-button>
+      </form>
+
+      <p class="ax-mt-4 ax-text-sm ax-text-gray-400 ax-text-center">
+        Already a member?
+        <a href="#" class="ax-text-blue-400 ax-underline">Log in</a>
+      </p>
+    </div>
+  </div>
+</div>

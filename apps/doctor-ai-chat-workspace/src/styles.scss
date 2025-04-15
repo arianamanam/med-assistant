@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+// Icon styles (details: https://acorexui.com/styles/icons)
+@use '@acorex/styles/icons/fontawesome/index.scss' as *;
+
+// Import ACoreX styles at the top of your styles.scss file
+@use '@acorex/styles/themes/default.scss' as *;
+@use '@acorex/styles/index.scss' as *;
+@use '@acorex/styles/icons/fontawesome/index.scss' as *;
+@use '../public/assets/fonts/font-awesome/css/fontawesome.min.css' as *;
+@use '../public/assets/fonts/font-awesome/css/brands.min.css' as *;
+@use '../public/assets/fonts/font-awesome/css/light.min.css' as *;
+@use '../public/assets/fonts/font-awesome/css/solid.min.css' as *;
+@use '../public/assets/fonts/inter/style/index.scss' as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

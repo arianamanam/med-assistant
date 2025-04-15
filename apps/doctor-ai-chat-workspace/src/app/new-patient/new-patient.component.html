@@ -1,0 +1,61 @@
+<div
+  class="ax-flex ax-flex-col ax-h-screen ax-bg-dark ax-text-white ax-font-sans"
+>
+  <!-- منوی بالا -->
+  <nav
+    class="ax-w-full ax-bg-gray-800 ax-py-3 ax-px-6 ax-flex ax-justify-end ax-gap-6 ax-fixed ax-top-0 ax-z-10 ax-h-16"
+  >
+    <a href="#" class="ax-text-white ax-text-sm ax-mt-3 hover:ax-text-primary"
+      >صفحه اصلی</a
+    >
+    <a href="#" class="ax-text-white ax-text-sm ax-mt-3 hover:ax-text-primary"
+      >خروج از حساب</a
+    >
+
+    <img
+      src="assets/Image/logo2.png"
+      alt="AI Assistant"
+      class="w-40 max-w-full h-auto object-contain ax-rounded-3xl"
+    />
+  </nav>
+
+  <!-- بدنه اصلی با دو بخش: تاریخچه + ربات -->
+  <div class="ax-flex ax-w-full ax-pt-16 ax-h-screen">
+    <!-- تاریخچه بیماران -->
+    <aside
+      class="ax-w-1/3 ax-bg-gray-900 ax-p-6 ax-border-r ax-border-gray-700 ax-h-[calc(100vh-4rem)] ax-overflow-y-auto ax-overflow-x-hidden"
+    >
+      <h2 class="ax-text-xl ax-font-semibold ax-mb-4 ax-text-center">
+        تاریخچه بیماران
+      </h2>
+      <ul class="ax-list-none ax-space-y-3 ax-mt-8">
+        <li
+          *ngFor="let patient of patientHistory; trackBy: trackByIndex"
+          (click)="goToChat(patient)"
+          (keydown.enter)="goToChat(patient)"
+          tabindex="0"
+          class="ax-p-3 ax-rounded-md ax-bg-gray-800 ax-border ax-border-gray-700 hover:ax-bg-gray-700 ax-transition"
+        >
+          {{ patient.first_message | slice : 0 : 50 }}
+        </li>
+      </ul>
+    </aside>
+
+    <!-- تصویر ربات + دکمه -->
+    <main
+      class="ax-flex-1 ax-flex ax-flex-col ax-justify-center ax-items-center ax-gap-6 ax-bg-dark"
+    >
+      <img
+        src="assets/Image/mental-state.png"
+        alt="AI Assistant"
+        class="ax-w-52"
+      />
+      <ax-button
+        text="ایجاد بیمار جدید"
+        color="secondary"
+        (onClick)="startSession()"
+      >
+      </ax-button>
+    </main>
+  </div>
+</div>

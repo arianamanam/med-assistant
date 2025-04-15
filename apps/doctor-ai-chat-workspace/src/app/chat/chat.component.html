@@ -1,0 +1,129 @@
+<div class="ax-min-h-screen ax-bg-gray-200 ax-flex" style="direction: ltr">
+  <!-- نوبار ثابت بالا -->
+  <nav
+    class="ax-w-full ax-bg-gray-800 ax-py-3 ax-px-6 ax-flex ax-justify-end ax-gap-6 ax-fixed ax-top-0 ax-z-10 ax-h-16"
+  >
+    <a href="" class="ax-text-white ax-text-sm ax-mt-3 hover:ax-text-primary"
+      >صفحه اصلی</a
+    >
+    <a href="#" class="ax-text-white ax-text-sm ax-mt-3 hover:ax-text-primary"
+      >خروج از حساب</a
+    >
+
+    <img
+      src="assets/Image/logo2.png"
+      alt="AI Assistant"
+      class="w-40 max-w-full h-auto object-contain ax-rounded-3xl"
+    />
+    >
+  </nav>
+
+  <div class="ax-flex ax-w-full ax-pt-16 ax-overflow-hidden">
+    <!-- سایدبار راست -->
+    <div
+      class="ax-w-80 ax-p-6 ax-rounded-[50px] ax-shadow-xl ax-flex ax-flex-col ax-space-y-8 ax-h-[calc(100vh-4rem)]"
+    >
+      <!-- باکس History Chat -->
+      <div
+        class="ax-p-2 ax-bg-blue-100 ax-rounded-[50px] ax-flex-1 ax-flex ax-flex-col ax-overflow-y-auto"
+      >
+        <h3 class="ax-text-black ax-text-xl ax-text-center ax-my-5">
+          تاریخچه بیمار
+        </h3>
+        {{ chatData.response }}
+      </div>
+    </div>
+
+    <!-- محتوای چت -->
+    <div
+      class="ax-flex-1 ax-rounded-[50px] ax-bg-gray-300 ax-shadow-sm ax-flex ax-flex-col ax-p-4 ax-gap-4 ax-h-[calc(100vh-4rem)]"
+    >
+      <!-- پیام‌ها -->
+      <div
+        id="chatContainer"
+        class="ax-flex-1 ax-overflow-y-auto ax-p-3 ax-space-y-6"
+      >
+        <div *ngFor="let message of chatMessages">
+          <div class="ax-flex ax-flex-col ax-gap-6">
+            <div class="ax-flex ax-justify-end">
+              <div
+                class="ax-bg-blue-100 ax-rounded-[50px] ax-p-4 ax-max-w-[80%]"
+              >
+                <h2 class="ax-text-lg ax-font-medium ax-text-gray-800">
+                  {{ message.user_message }}
+                  <!-- <app-file-download
+                    [document]="message.document"
+                  ></app-file-download> -->
+                </h2>
+              </div>
+            </div>
+            <div class="ax-flex ax-justify-start">
+              <div
+                class="ax-bg-gray-100 ax-rounded-[50px] ax-p-4 ax-max-w-[80%]"
+              >
+                <h2 class="ax-text-lg ax-font-normal ax-text-gray-700">
+                  {{ message.agent_message }}
+                </h2>
+              </div>
+            </div>
+          </div>
+          <p class="ax-text-gray-600 ax-text-sm ax-leading-6">
+            {{ message.content }}
+          </p>
+        </div>
+      </div>
+      <!-- دکمه‌های ویژه بالای نوار ورودی -->
+      <div class="ax-flex ax-gap-3 ax-justify-center ax-mt-2">
+        <button
+          class="ax-bg-white ax-rounded-[50px] ax-shadow-md ax-px-4 ax-py-2 ax-text-sm ax-font-medium ax-text-gray-700 hover:ax-bg-blue-100"
+          (click)="requestMedicine()"
+        >
+          درخواست دارو
+        </button>
+        <button
+          class="ax-bg-white ax-rounded-[50px] ax-shadow-md ax-px-4 ax-py-2 ax-text-sm ax-font-medium ax-text-gray-700 hover:ax-bg-blue-100"
+          (click)="suggestPrescription()"
+        >
+          پیشنهاد نسخه
+        </button>
+        <button
+          class="ax-bg-white ax-rounded-[50px] ax-shadow-md ax-px-4 ax-py-2 ax-text-sm ax-font-medium ax-text-gray-700 hover:ax-bg-blue-100"
+          (click)="showSummary()"
+        >
+          خلاصه مکالمه
+        </button>
+      </div>
+
+      <!-- نوار ورودی پیام -->
+      <div
+        class="ax-bg-white ax-rounded-[50px] ax-p-4 ax-shadow-sm ax-flex ax-items-center ax-gap-4"
+      >
+        <input
+          type="text"
+          [(ngModel)]="userInput"
+          placeholder="Ask or search anything"
+          class="ax-flex-1 ax-outline-none ax-text-sm ax-text-gray-600 ax-placeholder-gray-400"
+          (keydown.enter)="onSendMessage()"
+        />
+        <button (click)="onSendMessage()">
+          <i class="fa-regular fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+    <div
+      class="ax-w-80 ax-p-6 ax-rounded-[50px] ax-shadow-xl ax-flex ax-flex-col ax-space-y-8 ax-h-[calc(100vh-4rem)]"
+    >
+      <!-- باکس History Chat -->
+      <div
+        class="ax-p-2 ax-bg-sky-200 ax-rounded-[50px] ax-flex-1 ax-flex ax-flex-col ax-overflow-y-auto"
+      >
+        <h3 class="ax-text-black ax-text-xl ax-text-center ax-my-5">
+          دسته بندی فایل ها
+        </h3>
+        <div *ngFor="let file of fileMessages" class="ax-mb-4">
+          <app-file-download [document]="file.document"></app-file-download>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

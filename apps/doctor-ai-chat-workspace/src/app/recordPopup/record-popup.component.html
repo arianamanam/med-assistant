@@ -1,0 +1,11 @@
+<div class="ax-p-6 ax-text-center">
+  <button
+    (click)="toggleRecording()"
+    [class.ax-bg-red-600]="isRecording"
+    [class.ax-bg-gray-700]="!isRecording"
+    [class.ax-animate-pulse]="isRecording"
+    class="ax-text-white ax-py-3 ax-px-6 ax-rounded-full ax-text-base ax-font-semibold ax-shadow-md hover:ax-opacity-90 ax-transition-all"
+  >
+    {{ isRecording ? 'در حال ضبط...' : 'ضبط مکالمه' }}
+  </button>
+</div>

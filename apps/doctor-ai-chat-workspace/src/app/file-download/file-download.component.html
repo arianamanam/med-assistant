@@ -1,0 +1,26 @@
+<div *ngIf="document as doc" class="file-box">
+  <div class="file-container">
+    <div class="file-header">
+      <div class="file-icon">
+        <ng-container [ngSwitch]="document.type">
+          <span *ngSwitchCase="'txt'" class="txt-icon">📄</span>
+          <span *ngSwitchCase="'pdf'" class="pdf-icon">📚</span>
+          <span *ngSwitchCase="'image'" class="image-icon">🖼️</span>
+          <span *ngSwitchDefault class="default-icon">📁</span>
+        </ng-container>
+      </div>
+      <div class="file-info">
+        <p class="file-title">{{ document.title }}</p>
+        <p class="file-type">نوع فایل: {{ document.type.toUpperCase() }}</p>
+      </div>
+    </div>
+
+    <!-- نمایش لینک دانلود -->
+    <button
+      (click)="downloadFile(document.download_url, document.title)"
+      class="download-btn"
+    >
+      دانلود فایل
+    </button>
+  </div>
+</div>

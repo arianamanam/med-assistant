@@ -1,0 +1,42 @@
+@use '@acorex/styles/utils/index.scss' as utils;
+
+$theme-colors: (
+  'primary': hsl(191, 83%, 25%),
+  'warning': rgb(255, 168, 0),
+  'danger': (
+    // Danger color for light mode
+    oklch(0.645 0.246 16.439),
+    // Danger color for dark mode
+    oklch(0.712 0.194 13.428),
+  ),
+  'accent1': oklch(0.667 0.295 322.15),
+  'accent2': oklch(0.585 0.233 277.117),
+);
+
+$theme-surfaces: (
+  'light-start': #ffffff,
+  'light-end': #d4d4d4,
+  'dark-start': #27272a,
+  'dark-end': #09090b,
+);
+
+$options: (
+  'color-range': false,
+  'light': #ffffff,
+  'dark': #09090b,
+);
+
+@forward '@acorex/styles/variables/index.scss';
+
+:root,
+.ax-light {
+  --ax-sys-body-font-size: 1rem;
+  --ax-sys-size-base: 2.5rem;
+  --ax-sys-border-radius: 0.5rem;
+}
+
+@include utils.generate-pallete-variables(
+  $theme-colors,
+  $theme-surfaces,
+  $options
+);

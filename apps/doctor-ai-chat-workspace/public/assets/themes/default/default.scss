@@ -1,0 +1,107 @@
+:root,
+.ax-light {
+  --ax-size-base: 2.5rem;
+  --ax-size-default: var(--ax-size-base);
+  --ax-icon-weight: 400;
+  --ax-icon-size: 100%;
+  --ax-rounded-border-default: 0.5rem;
+
+  --ax-color-background-default: 249, 250, 251;
+  --ax-color-text-default: 22, 22, 22;
+  --ax-color-ghost: 255, 255, 255;
+  --ax-color-ghost-fore: 0, 0, 0;
+  --ax-color-surface: 255, 255, 255;
+  --ax-color-surface-fore: 0, 0, 0;
+  --ax-color-on-surface: 240, 240, 241;
+  --ax-color-on-surface-fore: 0, 0, 0;
+  --ax-color-input-surface: 255, 255, 255;
+  --ax-color-input-surface-fore: 0, 0, 0;
+  --ax-color-input-border: 209, 213, 219;
+  --ax-color-input-border-fore: 0, 0, 0;
+  --ax-color-border-default: 133, 133, 133;
+
+  --ax-color-primary-fore: 0, 0, 0;
+  --ax-color-primary-fore-tint: 55, 69, 65;
+  --ax-color-primary-50: 251, 254, 253;
+  --ax-color-primary-100: 248, 252, 251;
+  --ax-color-primary-200: 233, 247, 243;
+  --ax-color-primary-300: 219, 242, 235;
+  --ax-color-primary-400: 204, 237, 227;
+  --ax-color-primary-500: 182, 229, 215;
+  --ax-color-primary-600: 164, 206, 194;
+  --ax-color-primary-700: 127, 160, 151;
+  --ax-color-primary-800: 91, 115, 108;
+  --ax-color-primary-900: 55, 69, 65;
+  --ax-color-primary-950: 18, 23, 21;
+
+  --ax-color-success-fore: 0, 0, 0;
+  --ax-color-success-fore-tint: 2, 20, 14;
+  --ax-color-success-50: 243, 252, 249;
+  --ax-color-success-100: 231, 248, 242;
+  --ax-color-success-200: 183, 234, 217;
+  --ax-color-success-300: 136, 220, 192;
+  --ax-color-success-400: 88, 206, 167;
+  --ax-color-success-500: 16, 185, 129;
+  --ax-color-success-600: 14, 167, 116;
+  --ax-color-success-700: 11, 130, 90;
+  --ax-color-success-800: 8, 93, 65;
+  --ax-color-success-900: 5, 56, 39;
+  --ax-color-success-950: 2, 18, 13;
+
+  --ax-color-warning-fore: 0, 0, 0;
+  --ax-color-warning-fore-tint: 77, 61, 12;
+  --ax-color-warning-50: 255, 252, 244;
+  --ax-color-warning-100: 255, 250, 234;
+  --ax-color-warning-200: 255, 239, 191;
+  --ax-color-warning-300: 255, 229, 148;
+  --ax-color-warning-400: 255, 218, 105;
+  --ax-color-warning-500: 255, 202, 40;
+  --ax-color-warning-600: 230, 182, 36;
+  --ax-color-warning-700: 179, 141, 28;
+  --ax-color-warning-800: 128, 101, 20;
+  --ax-color-warning-900: 77, 61, 12;
+  --ax-color-warning-950: 25, 20, 4;
+
+  --ax-color-danger-fore: 255, 255, 255;
+  --ax-color-danger-fore-tint: 72, 20, 20;
+  --ax-color-danger-50: 254, 246, 246;
+  --ax-color-danger-100: 253, 236, 236;
+  --ax-color-danger-200: 250, 199, 199;
+  --ax-color-danger-300: 247, 162, 162;
+  --ax-color-danger-400: 244, 124, 124;
+  --ax-color-danger-500: 239, 68, 68;
+  --ax-color-danger-600: 215, 61, 61;
+  --ax-color-danger-700: 167, 48, 48;
+  --ax-color-danger-800: 120, 34, 34;
+  --ax-color-danger-900: 72, 20, 20;
+  --ax-color-danger-950: 24, 7, 7;
+
+  --ax-color-neutral-fore: 255, 255, 255;
+  --ax-color-neutral-fore-tint: 32, 34, 38;
+  --ax-color-neutral-50: 248, 248, 249;
+  --ax-color-neutral-100: 240, 241, 242;
+  --ax-color-neutral-200: 211, 213, 217;
+  --ax-color-neutral-300: 181, 185, 192;
+  --ax-color-neutral-400: 151, 156, 166;
+  --ax-color-neutral-500: 107, 114, 128;
+  --ax-color-neutral-600: 96, 103, 115;
+  --ax-color-neutral-700: 75, 80, 90;
+  --ax-color-neutral-800: 54, 57, 64;
+  --ax-color-neutral-900: 32, 34, 38;
+  --ax-color-neutral-950: 11, 11, 13;
+}
+.ax-dark {
+  --ax-color-background-default: 24, 32, 43;
+  --ax-color-text-default: 255, 255, 255;
+  --ax-color-ghost: 77, 91, 113;
+  --ax-color-ghost-fore: 255, 255, 255;
+  --ax-color-surface: 31, 41, 55;
+  --ax-color-surface-fore: 255, 255, 255;
+  --ax-color-on-surface: 55, 65, 81;
+  --ax-color-on-surface-fore: 255, 255, 255;
+  --ax-color-input-surface: 38, 45, 57;
+  --ax-color-input-surface-fore: 255, 255, 255;
+  --ax-color-input-border: 75, 85, 99;
+  --ax-color-input-border-fore: 255, 255, 255;
+  --ax-color-border-default: 75, 85, 99;
+}

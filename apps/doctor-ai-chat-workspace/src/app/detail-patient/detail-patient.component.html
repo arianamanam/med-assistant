@@ -1,0 +1,73 @@
+<div
+  class="ax-bg-white ax-rounded-[50px] ax-p-6 ax-shadow-sm ax-max-w-md ax-mx-auto"
+>
+  <div class="ax-mb-6">
+    <label
+      class="ax-block ax-text-sm ax-font-medium ax-text-gray-700 ax-mb-2"
+      for="nationalCode"
+    >
+      کد ملی بیمار
+    </label>
+    <input
+      name="nationalCode"
+      type="text"
+      [(ngModel)]="patientNationalCode"
+      placeholder=" 1234567890"
+      class="ax-w-full ax-px-3 ax-py-2 ax-border ax-border-gray-300 ax-rounded-lg ax-text-sm ax-text-gray-700 ax-placeholder-gray-400 focus:ax-outline-none focus:ax-ring-2 focus:ax-ring-blue-500"
+    />
+  </div>
+  <!-- تاریخ تولد بیمار -->
+  <div class="ax-mb-6">
+    <label
+      class="ax-block ax-text-sm ax-font-medium ax-text-gray-700 ax-mb-2"
+      for="birthDate"
+    >
+      تاریخ تولد بیمار
+    </label>
+    <input
+      name="birthDate"
+      type="text"
+      [(ngModel)]="patientBirthDate"
+      placeholder=" 1370/01/01"
+      class="ax-w-full ax-px-3 ax-py-2 ax-border ax-border-gray-300 ax-rounded-lg ax-text-sm ax-text-gray-700 ax-placeholder-gray-400 focus:ax-outline-none focus:ax-ring-2 focus:ax-ring-blue-500"
+    />
+
+    <button
+      class="ax-bg-blue-600 ax-text-white ax-py-2 ax-px-4 ax-rounded-lg ax-text-sm ax-font-medium ax-hover:bg-blue-700 ax-transition-colors ax-mt-5"
+      (click)="checkPatientInfo()"
+    >
+      استعلام
+    </button>
+  </div>
+
+  <div class="ax-mb-6">
+    <label
+      class="ax-block ax-text-sm ax-font-medium ax-text-gray-700 ax-mb-2"
+      for="name"
+    >
+      نام بیمار
+    </label>
+    <input
+      name="name"
+      type="text"
+      [(ngModel)]="profileName"
+      placeholder="e.g. Ariana"
+      class="ax-w-full ax-px-3 ax-py-2 ax-border ax-border-gray-300 ax-rounded-lg ax-text-sm ax-text-gray-700 ax-placeholder-gray-400 focus:ax-outline-none focus:ax-ring-2 focus:ax-ring-blue-500"
+    />
+  </div>
+
+  <div class="ax-flex ax-justify-between">
+    <button
+      class="ax-bg-transparent ax-border ax-border-gray-300 ax-text-gray-600 ax-py-2 ax-px-4 ax-rounded-lg ax-text-sm ax-font-medium hover:ax-bg-gray-50 ax-transition-colors"
+      (click)="close()"
+    >
+      لغو
+    </button>
+    <button
+      class="ax-bg-blue-600 ax-text-white ax-py-2 ax-px-4 ax-rounded-lg ax-text-sm ax-font-medium ax-hover:bg-blue-700 ax-transition-colors"
+      (click)="recordPopup()"
+    >
+      تایید بیمار
+    </button>
+  </div>
+</div>
