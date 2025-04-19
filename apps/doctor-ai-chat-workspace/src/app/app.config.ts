@@ -5,7 +5,11 @@ import {
 } from '@angular/core';
 import { appRoutes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import {
   AX_TRANSLATION_CONFIG,
@@ -18,6 +22,7 @@ import {
 import { AXValidationModule } from '@acorex/core/validation';
 import { environment } from '../environments/environment';
 import { AuthInterceptorFn } from './basic-interceptor';
+import { provideMarkdown } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -29,7 +34,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideClientHydration(),
     importProvidersFrom(AXValidationModule.forRoot()),
-
+    provideMarkdown(), // مقداردهی اولیه به MarkdownModule
     {
       provide: AX_TRANSLATION_CONFIG,
       useValue: translationConfig({

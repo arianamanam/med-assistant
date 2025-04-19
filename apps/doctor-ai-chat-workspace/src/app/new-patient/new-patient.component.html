@@ -36,7 +36,11 @@
           tabindex="0"
           class="ax-p-3 ax-rounded-md ax-bg-gray-800 ax-border ax-border-gray-700 hover:ax-bg-gray-700 ax-transition"
         >
-          {{ patient.first_message | slice : 0 : 50 }}
+          {{
+            patient.first_message
+              ? (patient.first_message | slice : 0 : 50)
+              : 'Media'
+          }}
         </li>
       </ul>
     </aside>

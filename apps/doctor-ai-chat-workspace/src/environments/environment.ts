@@ -5,7 +5,7 @@ import { getEnv } from './environment.base';
 // export const environment = {
 //   ...getEnv(baseUrl),
 // };http://192.168.25.162:30800/core
-const baseUrl = 'https://testapi.demisco.ai';
+const baseUrl = 'https://api.demisco.ai';
 
 export const environment = {
   ...getEnv(baseUrl),

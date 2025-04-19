@@ -5,13 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AIService } from '../../service/ai.service';
 import { FileDownloadComponent } from '../file-download/file-download.component';
+import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss'],
-  imports: [FormsModule, CommonModule, FileDownloadComponent],
-  providers: [AIService],
+  imports: [FormsModule, CommonModule, FileDownloadComponent, MarkdownModule],
+  providers: [AIService, MarkdownService],
 })
 export class ChatComponent implements OnInit {
   document = {

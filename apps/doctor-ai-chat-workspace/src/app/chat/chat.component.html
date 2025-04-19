@@ -51,9 +51,9 @@
               >
                 <h2 class="ax-text-lg ax-font-medium ax-text-gray-800">
                   {{ message.user_message }}
-                  <!-- <app-file-download
+                  <app-file-download
                     [document]="message.document"
-                  ></app-file-download> -->
+                  ></app-file-download>
                 </h2>
               </div>
             </div>
@@ -61,8 +61,16 @@
               <div
                 class="ax-bg-gray-100 ax-rounded-[50px] ax-p-4 ax-max-w-[80%]"
               >
-                <h2 class="ax-text-lg ax-font-normal ax-text-gray-700">
-                  {{ message.agent_message }}
+                <h2
+                  class="ax-text-lg ax-font-normal ax-text-gray-700 ax-text-right"
+                >
+                  <!-- {{ message.agent_message }} -->
+                  <markdown
+                    [data]="message.agent_message"
+                    lineHighlight
+                    [line]="'6,10-16'"
+                    [lineOffset]="5"
+                  ></markdown>
                 </h2>
               </div>
             </div>
@@ -84,13 +92,13 @@
           class="ax-bg-white ax-rounded-[50px] ax-shadow-md ax-px-4 ax-py-2 ax-text-sm ax-font-medium ax-text-gray-700 hover:ax-bg-blue-100"
           (click)="suggestPrescription()"
         >
-          پیشنهاد نسخه
+          پیشنهاد نسخه دارویی
         </button>
         <button
           class="ax-bg-white ax-rounded-[50px] ax-shadow-md ax-px-4 ax-py-2 ax-text-sm ax-font-medium ax-text-gray-700 hover:ax-bg-blue-100"
           (click)="showSummary()"
         >
-          خلاصه مکالمه
+          پیشنهاد آزمایش
         </button>
       </div>
 
@@ -107,6 +115,8 @@
         />
         <button (click)="onSendMessage()">
           <i class="fa-regular fa-paper-plane"></i>
+          <i class="fa-solid fa-microphone"></i>
+          <i class="fa-solid fa-paperclip"></i>
         </button>
       </div>
     </div>
@@ -120,9 +130,7 @@
         <h3 class="ax-text-black ax-text-xl ax-text-center ax-my-5">
           دسته بندی فایل ها
         </h3>
-        <div *ngFor="let file of fileMessages" class="ax-mb-4">
-          <app-file-download [document]="file.document"></app-file-download>
-        </div>
+        {{ chatData.response }}
       </div>
     </div>
   </div>
