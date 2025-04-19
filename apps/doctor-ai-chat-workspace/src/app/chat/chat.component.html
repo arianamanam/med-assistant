@@ -113,11 +113,38 @@
           class="ax-flex-1 ax-outline-none ax-text-sm ax-text-gray-600 ax-placeholder-gray-400"
           (keydown.enter)="onSendMessage()"
         />
-        <button (click)="onSendMessage()">
-          <i class="fa-regular fa-paper-plane"></i>
-          <i class="fa-solid fa-microphone"></i>
-          <i class="fa-solid fa-paperclip"></i>
-        </button>
+        <!-- آیکون‌ها به صورت جداگانه با فاصله مناسب -->
+        <div class="ax-flex ax-items-center ax-gap-2">
+          <!-- آیکون ارسال -->
+          <button
+            (click)="onSendMessage()"
+            class="ax-text-gray-500 hover:ax-text-primary ax-px-2"
+          >
+            <i class="fa-regular fa-paper-plane"></i>
+          </button>
+
+          <!-- آیکون میکروفن -->
+          <button
+            (click)="startVoiceRecording()"
+            class="ax-text-gray-500 hover:ax-text-primary ax-px-2"
+          >
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+
+          <!-- آیکون کلیپس -->
+          <label
+            for="file-upload"
+            class="ax-text-gray-500 hover:ax-text-primary ax-px-2 cursor-pointer"
+          >
+            <i class="fa-solid fa-paperclip"></i>
+          </label>
+          <input
+            id="file-upload"
+            type="file"
+            hidden
+            (change)="handleFileUpload($event)"
+          />
+        </div>
       </div>
     </div>
     <div

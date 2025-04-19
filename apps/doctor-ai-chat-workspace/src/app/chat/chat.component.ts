@@ -15,6 +15,12 @@ import { MarkdownModule, MarkdownService } from 'ngx-markdown';
   providers: [AIService, MarkdownService],
 })
 export class ChatComponent implements OnInit {
+  handleFileUpload($event: Event) {
+    throw new Error('Method not implemented.');
+  }
+  startVoiceRecording() {
+    throw new Error('Method not implemented.');
+  }
   document = {
     id: 'f5df5805-58be-40f1-9746-1ffaeecac9d1',
     title: '3.txt',
